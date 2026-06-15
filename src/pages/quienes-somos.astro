@@ -1,0 +1,109 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Quiénes somos – DDX Digital Dental Xperts" lang="es" description="Conozca al equipo y la filosofía de DDX Digital Dental Xperts. Tecnología y humanidad al servicio de su sonrisa.">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="eyebrow">La clínica</span>
+    <h1 class="page-h1">Quiénes somos</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+  </div>
+
+  <!-- MISSION -->
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-2">
+        <div class="img-frame-placeholder" style="height:440px; order:-1;">
+          <span>Foto de la clínica / equipo</span>
+        </div>
+        <div>
+          <span class="eyebrow">Nuestra misión</span>
+          <h2 class="sec-h2">Comprometidos con su salud dental y su bienestar</h2>
+          <div class="divider-bar"></div>
+          <p class="lead">
+            En DDX Digital Dental Xperts creemos que una buena salud dental transforma vidas. Por eso nuestro equipo de especialistas trabaja con la última tecnología digital para ofrecerle diagnósticos precisos y tratamientos mínimamente invasivos.
+          </p>
+          <p class="lead" style="margin-top:14px;">
+            Cada paciente es único. Escuchamos, analizamos y diseñamos un plan personalizado adaptado a sus necesidades y objetivos, acompañándole en cada etapa del proceso.
+          </p>
+          <p class="lead" style="margin-top:14px;">
+            Nuestra filosofía combina la excelencia técnica con un trato cercano y humano, porque entendemos que ir al dentista debe ser una experiencia positiva.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="sec-light">
+    <div class="section">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">Nuestros valores</span>
+        <h2 class="sec-h2">Lo que nos define</h2>
+        <div class="divider-bar"></div>
+      </div>
+      <div class="grid-3">
+        {[
+          { icon: '🏆', title: 'Excelencia', text: 'Buscamos los mejores resultados en cada tratamiento, utilizando materiales y tecnología de primera calidad sin comprometer la precisión.' },
+          { icon: '💡', title: 'Innovación', text: 'Incorporamos continuamente los avances en odontología digital: TAC 3D, escáneres intraorales, diseño de sonrisa guiado por software.' },
+          { icon: '🤝', title: 'Cercanía', text: 'Cada paciente merece atención personalizada. Escuchamos sus dudas, explicamos cada paso y construimos una relación de confianza duradera.' },
+          { icon: '🔬', title: 'Rigor científico', text: 'Nuestros tratamientos están basados en la evidencia clínica más actualizada y en la formación continua de nuestros especialistas.' },
+          { icon: '♻️', title: 'Responsabilidad', text: 'Trabajamos de forma ética, transparente y con respeto al medioambiente, utilizando materiales biocompatibles y procesos sostenibles.' },
+          { icon: '😌', title: 'Confort', text: 'Diseñamos cada visita para que sea lo más cómoda posible: sedación consciente disponible, tiempos reducidos y atención sin prisas.' },
+        ].map(v => (
+          <div class="value-card">
+            <div class="value-icon">{v.icon}</div>
+            <div class="value-title">{v.title}</div>
+            <p class="value-text">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-2" style="align-items:start;">
+        <div>
+          <span class="eyebrow">Nuestra historia</span>
+          <h2 class="sec-h2">Un camino de crecimiento y excelencia</h2>
+          <div class="divider-bar"></div>
+          <p class="lead">Desde nuestros inicios hemos crecido con el objetivo de convertirnos en referente de la odontología digital.</p>
+        </div>
+        <div>
+          {[
+            { year: '20XX', title: 'Fundación de DDX', text: 'Apertura de la clínica con el compromiso de integrar tecnología digital en cada tratamiento.' },
+            { year: '20XX', title: 'Primer escáner 3D', text: 'Incorporación del primer TAC de haz cónico (CBCT) para diagnóstico tridimensional de máxima precisión.' },
+            { year: '20XX', title: 'Expansión del equipo', text: 'Incorporación de nuevos especialistas en implantología, ortodoncia y periodoncia.' },
+            { year: '20XX', title: 'Certificación de calidad', text: 'Obtención de certificación internacional de calidad en procesos clínicos y gestión de pacientes.' },
+            { year: 'Hoy', title: '+5.000 pacientes', text: 'Más de cinco mil pacientes satisfechos avalan nuestro trabajo y nuestra filosofía de excelencia.' },
+          ].map(item => (
+            <div class="tl-item">
+              <div class="tl-year">{item.year}</div>
+              <div>
+                <div class="tl-content-title">{item.title}</div>
+                <p class="tl-content-text">{item.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Conózcanos</span>
+      <h2 class="sec-h2-white">¿Quiere conocer a nuestro equipo?</h2>
+      <div class="cta-actions">
+        <a href="/equipo" class="btn btn-white btn-lg">Nuestro equipo</a>
+        <a href="/cita" class="btn btn-outline-white btn-lg">Pida su cita</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

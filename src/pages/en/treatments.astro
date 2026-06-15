@@ -1,0 +1,61 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+
+const treatments = [
+  { id: 'implants', label: 'Implants', title: 'Dental Implants', description: 'Dental implants are the most advanced and lasting solution for replacing missing teeth. At DDX we plan every case digitally, guaranteeing precision and predictable outcomes.', bullets: ['Single and multiple implants', 'All-on-4 and All-on-6 (full arch in one day)', 'Immediate-load implants', 'Computer-guided surgical planning', 'Bone regeneration and sinus lift'], imgLabel: 'Implants treatment photo', reverse: false },
+  { id: 'orthodontics', label: 'Orthodontics', title: 'Orthodontics & Invisalign', description: 'We correct tooth alignment with the most comfortable and aesthetic systems available — from state-of-the-art braces to personalised invisible aligners.', bullets: ['Invisible aligners (Invisalign and equivalents)', 'Metal and sapphire brackets', 'Lingual orthodontics (internal brackets)', 'Children\'s maxillary orthopaedics', 'Post-treatment retention and maintenance'], imgLabel: 'Orthodontics treatment photo', reverse: true },
+  { id: 'cosmetic', label: 'Cosmetic', title: 'Cosmetic Dentistry', description: 'We transform smiles with minimally invasive techniques. Digital smile design lets you see your result before any treatment begins.', bullets: ['Digital Smile Design (DSD)', 'Professional teeth whitening', 'Porcelain and composite veneers', 'Aesthetic crown lengthening', 'Laser gum contouring'], imgLabel: 'Cosmetic treatment photo', reverse: false },
+  { id: 'periodontics', label: 'Periodontics', title: 'Periodontics & Gum Health', description: 'Healthy gums are the foundation of a healthy mouth. We treat everything from mild gingivitis to advanced periodontitis with evidence-based protocols and laser technology.', bullets: ['Complete periodontal diagnosis', 'Scaling and root planing', 'Periodontal surgery (FMBS)', 'Diode laser treatment', 'Preventive periodontal maintenance'], imgLabel: 'Periodontics treatment photo', reverse: true },
+  { id: 'diagnostics', label: 'Diagnostics', title: '3D Digital Diagnostics', description: 'We have the most advanced diagnostic technology to give you a complete and precise picture of your oral situation before proposing any treatment.', bullets: ['Cone beam CT (CBCT)', 'High-precision intraoral scanner', 'Low-radiation digital X-ray', '3D digital models', 'Software-guided implant planning'], imgLabel: 'Diagnostics technology photo', reverse: false },
+  { id: 'paediatric', label: 'Paediatric', title: 'Paediatric & Preventive Dentistry', description: 'Caring for dental health from childhood is the best investment for the future. We create a friendly environment where children learn to look after their smile without fear.', bullets: ['First dental visit (from age 2)', 'Preventive fissure sealants', 'Professional fluoride application', 'Maxillary growth monitoring', 'Paediatric dental emergencies'], imgLabel: 'Paediatric dentistry photo', reverse: true },
+];
+---
+
+<Layout title="Treatments – DDX Digital Dental Xperts" lang="en" description="Dental implants, orthodontics, cosmetic dentistry, periodontics and more at DDX Digital Dental Xperts.">
+
+  <div class="page-hero">
+    <span class="eyebrow">Specialties</span>
+    <h1 class="page-h1">Treatments</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+    <p class="lead" style="max-width:560px; margin:16px auto 0;">Comprehensive dental solutions tailored to your needs with the best technology available.</p>
+  </div>
+
+  <div class="sec-white">
+    <div class="section-sm">
+      <nav class="treatment-pill-nav" aria-label="Treatment categories">
+        {treatments.map(t => <a href={`#${t.id}`} class="treatment-pill">{t.label}</a>)}
+      </nav>
+
+      {treatments.map(t => (
+        <div class="treatment-section" id={t.id}>
+          <div class="grid-2" style={t.reverse ? 'direction:rtl;' : ''}>
+            <div style={t.reverse ? 'direction:ltr;' : ''}>
+              <span class="eyebrow">{t.label}</span>
+              <h2 class="sec-h2">{t.title}</h2>
+              <div class="divider-bar"></div>
+              <p class="lead">{t.description}</p>
+              <ul class="bullet-list">{t.bullets.map(b => <li>{b}</li>)}</ul>
+              <a href="/en/appointment" class="btn btn-dark">Request information</a>
+            </div>
+            <div style={t.reverse ? 'direction:ltr;' : ''}>
+              <div class="img-frame-placeholder"><span>{t.imgLabel}</span></div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Not sure?</span>
+      <h2 class="sec-h2-white">We'll help you find the right treatment</h2>
+      <p class="lead-white" style="margin-top:14px;">Book a first consultation and our specialists will advise you with no obligation.</p>
+      <div class="cta-actions">
+        <a href="/en/appointment" class="btn btn-white btn-lg">Book an appointment</a>
+        <a href="/en/team" class="btn btn-outline-white btn-lg">Meet the team</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

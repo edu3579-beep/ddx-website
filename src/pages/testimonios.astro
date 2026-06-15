@@ -1,0 +1,140 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+
+const testimonials = [
+  {
+    quote: 'El tratamiento de implantes fue impecable. El equipo me explicó cada paso con detalle y el resultado superó todas mis expectativas. Me siento como si tuviera dientes naturales.',
+    name: 'María G.',
+    treatment: 'Implantes dentales',
+    date: 'Marzo 2024',
+  },
+  {
+    quote: 'Llevaba años con complejos por mi sonrisa y gracias a la ortodoncia invisible de DDX he recuperado la confianza. El proceso fue cómodo y los resultados visibles desde el primer mes.',
+    name: 'Carlos M.',
+    treatment: 'Ortodoncia Invisalign',
+    date: 'Enero 2024',
+  },
+  {
+    quote: 'La atención desde el primer momento fue excelente. Clínica muy moderna, profesionales de primer nivel y un trato cercano que hace que vayas sin miedo al dentista.',
+    name: 'Laura P.',
+    treatment: 'Estética dental',
+    date: 'Noviembre 2023',
+  },
+  {
+    quote: 'Me pusieron cuatro implantes y en un solo día tenía la prótesis definitiva. Increíble. El equipo de cirugía fue profesional, rápido y muy humano durante todo el proceso.',
+    name: 'Antonio R.',
+    treatment: 'All-on-4',
+    date: 'Octubre 2023',
+  },
+  {
+    quote: 'El diseño de sonrisa digital fue una experiencia única. Pude ver cómo quedaría el resultado antes de empezar. Las carillas de porcelana quedaron perfectas, absolutamente naturales.',
+    name: 'Sofía T.',
+    treatment: 'Carillas de porcelana',
+    date: 'Septiembre 2023',
+  },
+  {
+    quote: 'Tenía mucho miedo al dentista y en DDX lo superé gracias al trato tan amable. Mi hijo también es paciente y está encantado. Toda la familia somos pacientes de confianza.',
+    name: 'Elena V.',
+    treatment: 'Odontología general e infantil',
+    date: 'Julio 2023',
+  },
+];
+---
+
+<Layout title="Testimonios – DDX Digital Dental Xperts" lang="es" description="Lo que dicen nuestros pacientes sobre DDX Digital Dental Xperts. Más de 5.000 pacientes satisfechos avalan nuestro trabajo.">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="eyebrow">Experiencias reales</span>
+    <h1 class="page-h1">Lo que dicen nuestros pacientes</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+  </div>
+
+  <!-- RATING STRIP -->
+  <div class="stat-strip">
+    <div class="stat-strip-inner">
+      <div>
+        <div class="stat-val">★ 4.9</div>
+        <div class="stat-lbl">Valoración media</div>
+      </div>
+      <div>
+        <div class="stat-val">+500</div>
+        <div class="stat-lbl">Reseñas en Google</div>
+      </div>
+      <div>
+        <div class="stat-val">+5.000</div>
+        <div class="stat-lbl">Pacientes atendidos</div>
+      </div>
+      <div>
+        <div class="stat-val">98%</div>
+        <div class="stat-lbl">Recomiendan DDX</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS GRID -->
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-3">
+        {testimonials.map(t => (
+          <div class="testimonial-card">
+            <div class="quote-mark">"</div>
+            <p class="testimonial-text">{t.quote}</p>
+            <div class="testimonial-author">
+              <div class="author-name">{t.name}</div>
+              <div class="author-treatment">{t.treatment}</div>
+              <div class="stars">★★★★★</div>
+              <div style="font-size:.68rem; color:var(--silver); margin-top:4px;">{t.date}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- GOOGLE REVIEWS LINK -->
+  <div class="sec-light">
+    <div class="section-sm">
+      <div style="max-width:720px; margin:0 auto; background:var(--white); border:1px solid #E8E8E8; border-radius:2px; padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--silver); margin-bottom:6px;">Google Reviews</div>
+          <div class="sec-h3">Más de 500 valoraciones en Google</div>
+          <div class="stars" style="margin-top:6px; font-size:1rem;">★★★★★</div>
+          <p class="lead" style="margin-top:8px;">Vea todas las reseñas verificadas de nuestros pacientes en Google Maps.</p>
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-dark" aria-label="Ver reseñas en Google">
+          Ver reseñas en Google →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHARE YOUR EXPERIENCE -->
+  <div class="sec-white">
+    <div class="section">
+      <div class="center" style="max-width:600px; margin:0 auto;">
+        <span class="eyebrow">¿Ya es paciente?</span>
+        <h2 class="sec-h2">Comparta su experiencia</h2>
+        <div class="divider-bar"></div>
+        <p class="lead">Su opinión es muy importante para nosotros y ayuda a otros pacientes a tomar decisiones con confianza. Si ya ha sido atendido en DDX, le agradecemos que comparta su experiencia.</p>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top:24px;">
+          Dejar una reseña en Google
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Únase a nuestros pacientes</span>
+      <h2 class="sec-h2-white">¿Listo para ser el próximo testimonio?</h2>
+      <p class="lead-white" style="margin-top:14px;">Solicite su primera cita y empiece su camino hacia una sonrisa que le haga sentir orgulloso.</p>
+      <div class="cta-actions">
+        <a href="/cita" class="btn btn-white btn-lg">Pida su cita</a>
+        <a href="/tratamientos" class="btn btn-outline-white btn-lg">Ver tratamientos</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

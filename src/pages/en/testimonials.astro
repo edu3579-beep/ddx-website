@@ -1,0 +1,81 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import { SITE_CONFIG } from '../../config';
+
+const testimonials = [
+  { quote: 'The implant treatment was flawless. The team explained every step in detail and the result exceeded all my expectations. I feel like I have natural teeth.', name: 'María G.', treatment: 'Dental implants', date: 'March 2024' },
+  { quote: 'I had been self-conscious about my smile for years and thanks to DDX invisible orthodontics I have regained my confidence. The process was comfortable and results were visible from the first month.', name: 'Carlos M.', treatment: 'Invisalign orthodontics', date: 'January 2024' },
+  { quote: 'The care from the very first moment was excellent. Very modern clinic, top-level professionals and a warm approach that makes you go to the dentist without fear.', name: 'Laura P.', treatment: 'Cosmetic dentistry', date: 'November 2023' },
+  { quote: 'I had four implants placed and by the same day I already had my final prosthesis. Incredible. The surgical team was professional, fast and very caring throughout the whole process.', name: 'Antonio R.', treatment: 'All-on-4', date: 'October 2023' },
+  { quote: 'The digital smile design was a unique experience. I was able to see the result before we started. The porcelain veneers came out perfect — completely natural looking.', name: 'Sofía T.', treatment: 'Porcelain veneers', date: 'September 2023' },
+  { quote: 'I used to be very anxious about the dentist and at DDX I overcame that thanks to the wonderfully friendly team. My son is also a patient and loves it. The whole family goes to DDX.', name: 'Elena V.', treatment: 'General & paediatric dentistry', date: 'July 2023' },
+];
+
+const googleReviewsUrl = SITE_CONFIG.googleReviewsUrl || '/en/appointment';
+---
+
+<Layout title="Testimonials – DDX Digital Dental Xperts" lang="en" description="What our patients say about DDX Digital Dental Xperts. Over 5,000 happy patients vouch for our work.">
+
+  <div class="page-hero">
+    <span class="eyebrow">Real experiences</span>
+    <h1 class="page-h1">What our patients say</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+  </div>
+
+  <div class="stat-strip">
+    <div class="stat-strip-inner">
+      <div><div class="stat-val">★ 4.9</div><div class="stat-lbl">Average rating</div></div>
+      <div><div class="stat-val">+500</div><div class="stat-lbl">Google reviews</div></div>
+      <div><div class="stat-val">+5,000</div><div class="stat-lbl">Patients treated</div></div>
+      <div><div class="stat-val">98%</div><div class="stat-lbl">Recommend DDX</div></div>
+    </div>
+  </div>
+
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-3">
+        {testimonials.map(t => (
+          <div class="testimonial-card">
+            <div class="quote-mark">"</div>
+            <p class="testimonial-text">{t.quote}</p>
+            <div class="testimonial-author">
+              <div class="author-name">{t.name}</div>
+              <div class="author-treatment">{t.treatment}</div>
+              <div class="stars">★★★★★</div>
+              <div style="font-size:.68rem; color:var(--silver); margin-top:4px;">{t.date}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-light">
+    <div class="section-sm">
+      <div style="max-width:720px; margin:0 auto; background:var(--white); border:1px solid #E8E8E8; border-radius:2px; padding:32px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+        <div>
+          <div style="font-size:.6rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--silver); margin-bottom:6px;">Google Reviews</div>
+          <div class="sec-h3">Over 500 verified Google reviews</div>
+          <div class="stars" style="margin-top:6px; font-size:1rem;">★★★★★</div>
+          <p class="lead" style="margin-top:8px;">See all verified patient reviews on Google Maps.</p>
+        </div>
+        <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+          View Google reviews →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Join our patients</span>
+      <h2 class="sec-h2-white">Ready to be the next success story?</h2>
+      <p class="lead-white" style="margin-top:14px;">Book your first appointment and start your journey towards a smile you're proud of.</p>
+      <div class="cta-actions">
+        <a href="/en/appointment" class="btn btn-white btn-lg">Book an appointment</a>
+        <a href="/en/treatments" class="btn btn-outline-white btn-lg">View treatments</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

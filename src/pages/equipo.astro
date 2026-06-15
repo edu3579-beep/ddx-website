@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const doctors = [
+  {
+    name: 'Dr. [Nombre Apellido]',
+    specialty: 'Implantología y Cirugía Oral',
+    credentials: '[Universidad] · [Año de colegiación]',
+    bio: 'Especialista en implantes dentales y cirugía oral mínimamente invasiva. Formación en centros de referencia europeos y más de [X] años de experiencia clínica.',
+  },
+  {
+    name: 'Dra. [Nombre Apellido]',
+    specialty: 'Ortodoncia y Ortopedia Maxilar',
+    credentials: '[Universidad] · [Máster en Ortodoncia]',
+    bio: 'Experta en alineadores invisibles y ortodoncia lingual. Combinación de técnicas tradicionales y digitales para resultados estéticos y funcionales óptimos.',
+  },
+  {
+    name: 'Dr. [Nombre Apellido]',
+    specialty: 'Estética Dental y Prótesis',
+    credentials: '[Universidad] · [Especialidad en Prótesis]',
+    bio: 'Especializado en diseño de sonrisa digital, carillas de porcelana y restauraciones estéticas. Enfoque en resultados naturales y duraderos.',
+  },
+  {
+    name: 'Dra. [Nombre Apellido]',
+    specialty: 'Periodoncia y Salud Gingival',
+    credentials: '[Universidad] · [Máster en Periodoncia]',
+    bio: 'Especialista en el tratamiento de enfermedades periodontales y regeneración ósea. Enfoque preventivo y tratamientos con láser de última generación.',
+  },
+  {
+    name: 'Dr. [Nombre Apellido]',
+    specialty: 'Odontología General y Diagnóstico Digital',
+    credentials: '[Universidad] · [Años de experiencia]',
+    bio: 'Responsable del diagnóstico digital y coordinación clínica. Uso de TAC 3D y escáneres intraorales para planificaciones precisas e individualizadas.',
+  },
+  {
+    name: 'Dra. [Nombre Apellido]',
+    specialty: 'Odontología Infantil y Preventiva',
+    credentials: '[Universidad] · [Especialidad Pediatría Dental]',
+    bio: 'Especialista en atención dental infantil con técnicas adaptadas para los más pequeños. Ambiente amigable y enfoque preventivo desde las primeras visitas.',
+  },
+];
+---
+
+<Layout title="Nuestro equipo – DDX Digital Dental Experts" lang="es" description="Conozca al equipo de especialistas de DDX Digital Dental Experts. Profesionales comprometidos con su salud dental.">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="eyebrow">Especialistas</span>
+    <h1 class="page-h1">Nuestro equipo</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+    <p class="lead" style="max-width:560px; margin:16px auto 0;">Profesionales apasionados por la odontología, comprometidos con su formación continua y con los mejores resultados para cada paciente.</p>
+  </div>
+
+  <!-- TEAM GRID -->
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-3">
+        {doctors.map(doc => (
+          <div class="card">
+            <div class="doctor-placeholder">
+              <span>Foto del doctor</span>
+            </div>
+            <div class="card-body">
+              <span class="specialty-tag">{doc.specialty}</span>
+              <h3 class="sec-h3" style="margin-bottom:4px;">{doc.name}</h3>
+              <p style="font-size:.72rem; color:var(--silver); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">{doc.credentials}</p>
+              <p class="lead">{doc.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM PHILOSOPHY -->
+  <div class="sec-light">
+    <div class="section">
+      <div class="grid-2">
+        <div>
+          <span class="eyebrow">Formación continua</span>
+          <h2 class="sec-h2">Siempre a la vanguardia</h2>
+          <div class="divider-bar"></div>
+          <p class="lead">Todo nuestro equipo participa regularmente en congresos, cursos y formaciones de posgrado nacionales e internacionales. La actualización constante nos permite ofrecer siempre las técnicas y materiales más innovadores.</p>
+          <p class="lead" style="margin-top:14px;">Colaboramos con centros de referencia europeos y nos regimos por los protocolos clínicos más exigentes del sector.</p>
+        </div>
+        <div class="img-frame-placeholder" style="height:360px;">
+          <span>Foto del equipo / formación</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Conózcanos en persona</span>
+      <h2 class="sec-h2-white">¿Quiere conocernos y resolver sus dudas?</h2>
+      <p class="lead-white" style="margin-top:14px;">Solicite una primera consulta sin compromiso. Estaremos encantados de recibirle.</p>
+      <div class="cta-actions">
+        <a href="/cita" class="btn btn-white btn-lg">Pida su cita</a>
+        <a href="/tratamientos" class="btn btn-outline-white btn-lg">Ver tratamientos</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

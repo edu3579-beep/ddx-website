@@ -1,0 +1,110 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+
+const promos = [
+  {
+    badge: 'Nuevos pacientes',
+    title: 'Primera consulta gratuita',
+    description: 'Exploración bucal completa, diagnóstico personalizado y plan de tratamiento sin ningún coste. Conózcanos sin compromiso.',
+    validity: 'Válido hasta agotar plazas',
+    cta: 'Reservar ahora',
+  },
+  {
+    badge: 'Blanqueamiento',
+    title: 'Plan de blanqueamiento con descuento',
+    description: 'Blanqueamiento dental profesional en clínica + kit de mantenimiento domiciliario con un descuento especial para nuevos pacientes.',
+    validity: 'Consulte condiciones en clínica',
+    cta: 'Solicitar información',
+  },
+  {
+    badge: 'Revisión completa',
+    title: 'Revisión + radiografía panorámica',
+    description: 'Exploración completa con revisión periodontal y radiografía panorámica digital incluida. Ideal para quienes no visitan al dentista regularmente.',
+    validity: 'Precio especial · Consulte en recepción',
+    cta: 'Pedir cita',
+  },
+  {
+    badge: 'Financiación',
+    title: 'Financiación sin intereses',
+    description: 'Fraccione el coste de su tratamiento en cómodos plazos mensuales sin intereses. Disponible para tratamientos de implantes, ortodoncia y estética.',
+    validity: 'Sujeto a aprobación · Consulte condiciones',
+    cta: 'Más información',
+  },
+];
+---
+
+<Layout title="Promociones – DDX Digital Dental Xperts" lang="es" description="Ofertas y condiciones especiales en DDX Digital Dental Xperts. Primera consulta gratuita y financiación sin intereses.">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="eyebrow">Ofertas especiales</span>
+    <h1 class="page-h1">Promociones</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+    <p class="lead" style="max-width:560px; margin:16px auto 0;">Condiciones especiales para que pueda acceder al mejor cuidado dental con la máxima comodidad y facilidades de pago.</p>
+  </div>
+
+  <!-- PROMO CARDS -->
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-2">
+        {promos.map(p => (
+          <div class="promo-card">
+            <div class="promo-card-top"></div>
+            <div class="promo-card-body">
+              <span class="promo-badge">{p.badge}</span>
+              <h2 class="sec-h3" style="margin-bottom:10px; margin-top:4px;">{p.title}</h2>
+              <p class="lead">{p.description}</p>
+              <p class="promo-validity">📅 {p.validity}</p>
+              <a href="/cita" class="btn btn-dark" style="margin-top:20px;">{p.cta}</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- FINE PRINT -->
+  <div class="sec-light">
+    <div class="section-sm">
+      <div style="max-width:720px; margin:0 auto;">
+        <h3 class="sec-h3" style="margin-bottom:16px;">Términos y condiciones</h3>
+        <p class="lead">* Las promociones están sujetas a disponibilidad y pueden modificarse sin previo aviso. No acumulables con otras ofertas. Consulte con nuestro equipo de recepción para conocer los detalles de cada promoción y su disponibilidad actual.</p>
+        <p class="lead" style="margin-top:10px;">* La financiación sin intereses está sujeta a la aprobación de la entidad financiera colaboradora. Condiciones según importe y plazo elegido.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM QUOTE -->
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-2">
+        <div>
+          <span class="eyebrow">Presupuesto personalizado</span>
+          <h2 class="sec-h2">¿No encuentra lo que busca?</h2>
+          <div class="divider-bar"></div>
+          <p class="lead">Cada caso es diferente. Solicite una valoración personalizada y le prepararemos un presupuesto adaptado a sus necesidades y posibilidades.</p>
+          <p class="lead" style="margin-top:14px;">También puede contactarnos por WhatsApp para consultas rápidas y sin esperas.</p>
+          <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="/cita" class="btn btn-dark">Pedir valoración</a>
+          </div>
+        </div>
+        <div class="img-frame-placeholder" style="height:320px;">
+          <span>Foto consulta / atención</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Sin compromiso</span>
+      <h2 class="sec-h2-white">¿Quiere aprovechar alguna de estas ofertas?</h2>
+      <p class="lead-white" style="margin-top:14px;">Contáctenos hoy y le informaremos de todas las opciones disponibles.</p>
+      <div class="cta-actions">
+        <a href="/cita" class="btn btn-white btn-lg">Pida su cita</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

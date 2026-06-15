@@ -1,0 +1,68 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="About Us – DDX Digital Dental Xperts" lang="en" description="Learn about the team and philosophy behind DDX Digital Dental Xperts. Technology and humanity in service of your smile.">
+
+  <div class="page-hero">
+    <span class="eyebrow">The clinic</span>
+    <h1 class="page-h1">About Us</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+  </div>
+
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-2">
+        <div class="img-frame-placeholder" style="height:440px; order:-1;">
+          <span>Clinic / team photo</span>
+        </div>
+        <div>
+          <span class="eyebrow">Our mission</span>
+          <h2 class="sec-h2">Committed to your dental health and wellbeing</h2>
+          <div class="divider-bar"></div>
+          <p class="lead">At DDX Digital Dental Xperts we believe good dental health transforms lives. Our team of specialists works with the latest digital technology to provide precise diagnoses and minimally invasive treatments.</p>
+          <p class="lead" style="margin-top:14px;">Every patient is unique. We listen, analyse and design a personalised plan adapted to your needs and goals, accompanying you at every stage of the process.</p>
+          <p class="lead" style="margin-top:14px;">Our philosophy combines technical excellence with a warm and human approach, because going to the dentist should be a positive experience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-light">
+    <div class="section">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">Our values</span>
+        <h2 class="sec-h2">What defines us</h2>
+        <div class="divider-bar"></div>
+      </div>
+      <div class="grid-3">
+        {[
+          { icon: '🏆', title: 'Excellence', text: 'We pursue the best results in every treatment, using top-quality materials and technology without compromising precision.' },
+          { icon: '💡', title: 'Innovation', text: 'We continuously incorporate advances in digital dentistry: 3D CT, intraoral scanners, software-guided smile design.' },
+          { icon: '🤝', title: 'Care', text: 'Every patient deserves personal attention. We listen to your questions, explain every step and build a lasting relationship of trust.' },
+          { icon: '🔬', title: 'Scientific rigour', text: 'Our treatments are based on the most up-to-date clinical evidence and continuous professional development of our specialists.' },
+          { icon: '♻️', title: 'Responsibility', text: 'We work ethically, transparently and with respect for the environment, using biocompatible materials and sustainable processes.' },
+          { icon: '😌', title: 'Comfort', text: 'We design every visit to be as comfortable as possible: conscious sedation available, reduced waiting times, unhurried care.' },
+        ].map(v => (
+          <div class="value-card">
+            <div class="value-icon">{v.icon}</div>
+            <div class="value-title">{v.title}</div>
+            <p class="value-text">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Meet us</span>
+      <h2 class="sec-h2-white">Want to meet our team?</h2>
+      <div class="cta-actions">
+        <a href="/en/team" class="btn btn-white btn-lg">Our team</a>
+        <a href="/en/appointment" class="btn btn-outline-white btn-lg">Book an appointment</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

@@ -1,0 +1,53 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+
+const doctors = [
+  { name: 'Dr. [First Last]', specialty: 'Implantology & Oral Surgery', credentials: '[University] · Member since [Year]', bio: 'Specialist in dental implants and minimally invasive oral surgery. Trained at leading European centres with over [X] years of clinical experience.' },
+  { name: 'Dr. [First Last]', specialty: 'Orthodontics & Maxillary Orthopaedics', credentials: '[University] · [MSc Orthodontics]', bio: 'Expert in invisible aligners and lingual orthodontics. Combines traditional and digital techniques for optimal aesthetic and functional results.' },
+  { name: 'Dr. [First Last]', specialty: 'Cosmetic Dentistry & Prosthodontics', credentials: '[University] · [Prosthodontics Specialty]', bio: 'Specialised in digital smile design, porcelain veneers and aesthetic restorations. Focused on natural and long-lasting results.' },
+  { name: 'Dr. [First Last]', specialty: 'Periodontics & Gum Health', credentials: '[University] · [MSc Periodontics]', bio: 'Specialist in gum disease treatment and bone regeneration. Preventive approach and laser treatments using latest generation technology.' },
+  { name: 'Dr. [First Last]', specialty: 'General Dentistry & Digital Diagnostics', credentials: '[University] · [Years of experience]', bio: 'Responsible for digital diagnostics and clinical coordination. Uses 3D CT and intraoral scanners for precise, individualised treatment planning.' },
+  { name: 'Dr. [First Last]', specialty: 'Paediatric & Preventive Dentistry', credentials: '[University] · [Paediatric Dentistry Specialty]', bio: 'Specialist in children\'s dental care with techniques adapted for young patients. Friendly environment and preventive focus from the earliest visits.' },
+];
+---
+
+<Layout title="Our Team – DDX Digital Dental Xperts" lang="en" description="Meet the specialist team at DDX Digital Dental Xperts. Professionals committed to your dental health.">
+
+  <div class="page-hero">
+    <span class="eyebrow">Specialists</span>
+    <h1 class="page-h1">Our Team</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+    <p class="lead" style="max-width:560px; margin:16px auto 0;">Passionate dental professionals, committed to continuous training and the best outcomes for every patient.</p>
+  </div>
+
+  <div class="sec-white">
+    <div class="section">
+      <div class="grid-3">
+        {doctors.map(doc => (
+          <div class="card">
+            <div class="doctor-placeholder"><span>Doctor photo</span></div>
+            <div class="card-body">
+              <span class="specialty-tag">{doc.specialty}</span>
+              <h3 class="sec-h3" style="margin-bottom:4px;">{doc.name}</h3>
+              <p style="font-size:.72rem; color:var(--silver); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">{doc.credentials}</p>
+              <p class="lead">{doc.bio}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">Meet us in person</span>
+      <h2 class="sec-h2-white">Would you like to meet us and ask your questions?</h2>
+      <p class="lead-white" style="margin-top:14px;">Book a no-obligation first consultation. We'd love to see you.</p>
+      <div class="cta-actions">
+        <a href="/en/appointment" class="btn btn-white btn-lg">Book an appointment</a>
+        <a href="/en/treatments" class="btn btn-outline-white btn-lg">View treatments</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>

@@ -1,0 +1,154 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+
+const treatments = [
+  {
+    id: 'implantes',
+    label: 'Implantes',
+    title: 'Implantes Dentales',
+    description: 'Los implantes dentales son la solución más avanzada y duradera para sustituir piezas dentales perdidas. En DDX planificamos cada caso de forma digital, garantizando precisión y resultados predecibles.',
+    bullets: [
+      'Implantes unitarios y múltiples',
+      'All-on-4 y All-on-6 (boca completa en un día)',
+      'Implantes con carga inmediata',
+      'Planificación quirúrgica guiada por ordenador',
+      'Regeneración ósea y elevación de seno',
+    ],
+    imgLabel: 'Foto tratamiento implantes',
+    reverse: false,
+  },
+  {
+    id: 'ortodoncia',
+    label: 'Ortodoncia',
+    title: 'Ortodoncia e Invisalign',
+    description: 'Corregimos la posición de los dientes con los sistemas más cómodos y estéticos del mercado. Desde brackets de última generación hasta alineadores invisibles personalizados.',
+    bullets: [
+      'Alineadores invisibles (Invisalign y similares)',
+      'Brackets metálicos y de zafiro',
+      'Ortodoncia lingual (brackets internos)',
+      'Ortopedia maxilar infantil',
+      'Retención y mantenimiento postratamiento',
+    ],
+    imgLabel: 'Foto tratamiento ortodoncia',
+    reverse: true,
+  },
+  {
+    id: 'estetica',
+    label: 'Estética Dental',
+    title: 'Estética Dental',
+    description: 'Transformamos sonrisas con técnicas mínimamente invasivas. El diseño de sonrisa digital nos permite mostrarle el resultado antes de comenzar cualquier tratamiento.',
+    bullets: [
+      'Diseño de sonrisa digital (DSD)',
+      'Blanqueamiento dental profesional',
+      'Carillas de porcelana y composite',
+      'Alargamiento de corona estético',
+      'Remodelado gingival con láser',
+    ],
+    imgLabel: 'Foto tratamiento estética',
+    reverse: false,
+  },
+  {
+    id: 'periodoncia',
+    label: 'Periodoncia',
+    title: 'Periodoncia y Salud Gingival',
+    description: 'Las encías son la base de una boca sana. Tratamos desde la gingivitis leve hasta la periodontitis avanzada con protocolos basados en la evidencia y tecnología láser.',
+    bullets: [
+      'Diagnóstico periodontal completo',
+      'Raspado y alisado radicular',
+      'Cirugía periodontal (FMBS)',
+      'Tratamiento con láser de diodo',
+      'Mantenimiento periodontal preventivo',
+    ],
+    imgLabel: 'Foto tratamiento periodoncia',
+    reverse: true,
+  },
+  {
+    id: 'diagnostico',
+    label: 'Diagnóstico Digital',
+    title: 'Diagnóstico Digital 3D',
+    description: 'Disponemos de la tecnología diagnóstica más avanzada para ofrecerle una visión completa y precisa de su situación oral antes de proponer cualquier tratamiento.',
+    bullets: [
+      'TAC dental de haz cónico (CBCT)',
+      'Escáner intraoral de alta precisión',
+      'Radiografía digital de baja radiación',
+      'Modelos digitales 3D',
+      'Planificación de implantes guiada por software',
+    ],
+    imgLabel: 'Foto tecnología diagnóstico',
+    reverse: false,
+  },
+  {
+    id: 'infantil',
+    label: 'Odontología Infantil',
+    title: 'Odontología Infantil y Preventiva',
+    description: 'Cuidar la salud dental desde la infancia es la mejor inversión para el futuro. Creamos un ambiente amigable donde los más pequeños aprenden a cuidar su sonrisa sin miedo.',
+    bullets: [
+      'Primera visita al dentista (desde los 2 años)',
+      'Selladores de fisuras preventivos',
+      'Fluorización profesional',
+      'Ortopedia y control del crecimiento maxilar',
+      'Tratamientos de urgencia pediátrica',
+    ],
+    imgLabel: 'Foto odontología infantil',
+    reverse: true,
+  },
+];
+---
+
+<Layout title="Tratamientos – DDX Digital Dental Xperts" lang="es" description="Implantes dentales, ortodoncia, estética dental, periodoncia y más en DDX Digital Dental Xperts.">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="eyebrow">Especialidades</span>
+    <h1 class="page-h1">Tratamientos</h1>
+    <div class="divider-bar" style="margin:16px auto 0;"></div>
+    <p class="lead" style="max-width:560px; margin:16px auto 0;">Soluciones dentales integrales adaptadas a sus necesidades con la mejor tecnología disponible.</p>
+  </div>
+
+  <!-- CATEGORY PILLS -->
+  <div class="sec-white">
+    <div class="section-sm">
+      <nav class="treatment-pill-nav" aria-label="Categorías de tratamiento">
+        {treatments.map(t => (
+          <a href={`#${t.id}`} class="treatment-pill">{t.label}</a>
+        ))}
+      </nav>
+
+      {treatments.map(t => (
+        <div class="treatment-section" id={t.id}>
+          <div class="grid-2" style={t.reverse ? 'direction:rtl;' : ''}>
+            <div style={t.reverse ? 'direction:ltr;' : ''}>
+              <span class="eyebrow">{t.label}</span>
+              <h2 class="sec-h2">{t.title}</h2>
+              <div class="divider-bar"></div>
+              <p class="lead">{t.description}</p>
+              <ul class="bullet-list">
+                {t.bullets.map(b => <li>{b}</li>)}
+              </ul>
+              <a href="/cita" class="btn btn-dark">Solicitar información</a>
+            </div>
+            <div style={t.reverse ? 'direction:ltr;' : ''}>
+              <div class="img-frame-placeholder">
+                <span>{t.imgLabel}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <div class="cta-banner-inner">
+      <span class="eyebrow-dark">¿Tiene dudas?</span>
+      <h2 class="sec-h2-white">Le ayudamos a elegir el tratamiento adecuado</h2>
+      <p class="lead-white" style="margin-top:14px;">Solicite una primera consulta y nuestros especialistas le asesorarán sin compromiso.</p>
+      <div class="cta-actions">
+        <a href="/cita" class="btn btn-white btn-lg">Pida su cita</a>
+        <a href="/equipo" class="btn btn-outline-white btn-lg">Conocer al equipo</a>
+      </div>
+    </div>
+  </div>
+
+</Layout>
