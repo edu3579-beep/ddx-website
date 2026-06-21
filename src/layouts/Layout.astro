@@ -55,8 +55,40 @@ const homeHref = lang === 'en' ? '/en/' : '/';
     <header>
       <div class="header-inner">
         <a href={homeHref} class="logo" aria-label="DDX Digital Dental Xperts – inicio">
-          <img id="header-logo" src="/logos/logo-gray.png" alt="DDX Digital Dental Xperts" height="48" style="display:block; max-width:200px; width:auto;" />
-          <span id="header-logo-fallback" class="logo-ddx" style="display:none;">DDX</span>
+          <!-- Animated digital implant surgery icon -->
+          <svg class="logo-anim" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="32" cy="32" rx="28" ry="10" stroke="rgba(91,143,168,0.45)" stroke-width="1" fill="none" class="ring-outer"/>
+            <ellipse cx="32" cy="32" rx="20" ry="7" stroke="rgba(91,143,168,0.7)" stroke-width="1" fill="none" class="ring-mid"/>
+            <line x1="32" y1="4"  x2="32" y2="18" stroke="#5b8fa8" stroke-width="1" stroke-dasharray="2 2" opacity=".6"/>
+            <line x1="32" y1="46" x2="32" y2="60" stroke="#5b8fa8" stroke-width="1" stroke-dasharray="2 2" opacity=".6"/>
+            <line x1="4"  y1="32" x2="18" y2="32" stroke="#5b8fa8" stroke-width="1" stroke-dasharray="2 2" opacity=".6"/>
+            <line x1="46" y1="32" x2="60" y2="32" stroke="#5b8fa8" stroke-width="1" stroke-dasharray="2 2" opacity=".6"/>
+            <rect x="27" y="14" width="10" height="26" rx="5" fill="url(#ddxImplantGrad)"/>
+            <line x1="27" y1="22" x2="37" y2="22" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line x1="27" y1="26" x2="37" y2="26" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line x1="27" y1="30" x2="37" y2="30" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <line x1="27" y1="34" x2="37" y2="34" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+            <polygon points="27,40 37,40 32,47" fill="url(#ddxImplantGrad)"/>
+            <rect x="25" y="11" width="14" height="5" rx="2" fill="#a8cfe0"/>
+            <ellipse cx="32" cy="10" rx="8" ry="5" fill="url(#ddxCrownGrad)" class="crown"/>
+            <circle cx="32" cy="32" r="2" fill="#5b8fa8" class="target-dot"/>
+            <circle cx="60" cy="32" r="3" fill="#5b8fa8" class="orbit-dot"/>
+            <defs>
+              <linearGradient id="ddxImplantGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"   stop-color="#3e6478"/>
+                <stop offset="50%"  stop-color="#a8cfe0"/>
+                <stop offset="100%" stop-color="#5b8fa8"/>
+              </linearGradient>
+              <linearGradient id="ddxCrownGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stop-color="#eaf2f7"/>
+                <stop offset="100%" stop-color="#a8cfe0"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="logo-text-block">
+            <span class="logo-ddx">DDX</span>
+            <span class="logo-sub">Digital Dental Xperts</span>
+          </div>
         </a>
 
         <nav class="nav-tabs" aria-label="Navegación principal">
@@ -153,6 +185,40 @@ const homeHref = lang === 'en' ? '/en/' : '/';
       </svg>
     </a>
 
+    <!-- Opening Announcement Popup -->
+    <div id="opening-popup" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+      <div class="popup-card">
+        <div class="popup-eyebrow">{lang === 'en' ? 'Grand Opening' : 'Gran Apertura'}</div>
+        <div class="popup-logo-line">
+          <span class="popup-ddx">DDX</span>
+        </div>
+        <h2 class="popup-title" id="popup-title">
+          {lang === 'en' ? 'We open our doors' : 'Abrimos nuestras puertas'}
+        </h2>
+        <div class="popup-date">
+          <span class="popup-date-day">1</span>
+          <span class="popup-date-sep">·</span>
+          <span class="popup-date-month">{lang === 'en' ? 'August' : 'Agosto'}</span>
+          <span class="popup-date-sep">·</span>
+          <span class="popup-date-year">2026</span>
+        </div>
+        <p class="popup-sub">
+          {lang === 'en'
+            ? 'DDX Digital Dental Xperts — Technology and care in service of your smile. Cornellà de Llobregat, Barcelona.'
+            : 'DDX Digital Dental Xperts — Tecnología y humanidad al servicio de su sonrisa. Cornellà de Llobregat, Barcelona.'}
+        </p>
+        <div class="popup-actions">
+          <a href={lang === 'en' ? '/en/appointment' : '/cita'} class="popup-btn-primary" id="popup-cta">
+            {lang === 'en' ? 'Book your first visit' : 'Reserve su primera visita'}
+          </a>
+          <button class="popup-btn-close" id="popup-close">
+            {lang === 'en' ? 'Explore the clinic' : 'Explorar la clínica'}
+          </button>
+        </div>
+        <button class="popup-x" id="popup-x" aria-label={lang === 'en' ? 'Close' : 'Cerrar'}>✕</button>
+      </div>
+    </div>
+
     <script>
       (() => {
         const logo = document.getElementById('header-logo');
@@ -189,6 +255,25 @@ const homeHref = lang === 'en' ? '/en/' : '/';
         btn.addEventListener('click', () => btn.classList.contains('open') ? close() : open());
         overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
         overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      })();
+      (() => {
+        const POPUP_KEY = 'ddx_opening_dismissed';
+        const popup = document.getElementById('opening-popup');
+        if (!popup) return;
+        if (sessionStorage.getItem(POPUP_KEY)) {
+          popup.classList.add('popup-hidden');
+          return;
+        }
+        popup.classList.add('popup-visible');
+        const dismiss = () => {
+          popup.classList.remove('popup-visible');
+          popup.classList.add('popup-hidden');
+          sessionStorage.setItem(POPUP_KEY, '1');
+        };
+        document.getElementById('popup-close')?.addEventListener('click', dismiss);
+        document.getElementById('popup-x')?.addEventListener('click', dismiss);
+        document.getElementById('popup-cta')?.addEventListener('click', dismiss);
+        popup.addEventListener('click', (e) => { if (e.target === popup) dismiss(); });
       })();
     </script>
   </body>
