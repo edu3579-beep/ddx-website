@@ -1,20 +1,22 @@
-﻿---
+---
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="About Us – DDX Digital Dental Xperts" lang="en" description="Learn about the team and philosophy behind DDX Digital Dental Xperts. Technology and humanity in service of your smile.">
+<Layout title="About Us – DDX Digital Dental Xperts" lang="en" description="Learn about the team and philosophy behind DDX Digital Dental Xperts. Technology and expertise in service of your smile.">
 
-  <div class="page-hero">
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="padding:32px 32px 24px;">
     <span class="eyebrow">The clinic</span>
-    <h1 class="page-h1">About Us</h1>
-    <div class="divider-bar" style="margin:16px auto 0;"></div>
+    <h1 class="page-h1" style="font-size:2rem; margin-top:6px;">About Us</h1>
+    <div class="divider-bar" style="margin:10px auto 0;"></div>
   </div>
 
+  <!-- MISSION -->
   <div class="sec-white">
     <div class="section">
       <div class="grid-2">
-        <div class="img-frame-placeholder" style="height:440px; order:-1;">
-          <span>Clinic / team photo</span>
+        <div style="order:-1;">
+          <img src="/images/about-hero.jpg" alt="DDX Digital Dental Xperts team planning digital treatment" class="treatment-img" />
         </div>
         <div>
           <span class="eyebrow">Our mission</span>
@@ -28,6 +30,7 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </div>
 
+  <!-- WHAT DEFINES US -->
   <div class="sec-light">
     <div class="section">
       <div class="center" style="margin-bottom:44px;">
@@ -35,25 +38,50 @@ import Layout from '../../layouts/Layout.astro';
         <h2 class="sec-h2">What defines us</h2>
         <div class="divider-bar"></div>
       </div>
-      <div class="grid-3">
-        {[
-          { icon: '🏆', title: 'Excellence', text: 'We pursue the best results in every treatment, using top-quality materials and technology without compromising precision.' },
-          { icon: '💡', title: 'Innovation', text: 'We continuously incorporate advances in digital dentistry: 3D CT, intraoral scanners, software-guided smile design.' },
-          { icon: '🤝', title: 'Care', text: 'Every patient deserves personal attention. We listen to your questions, explain every step and build a lasting relationship of trust.' },
-          { icon: '🔬', title: 'Scientific rigour', text: 'Our treatments are based on the most up-to-date clinical evidence and continuous professional development of our specialists.' },
-          { icon: '♻️', title: 'Responsibility', text: 'We work ethically, transparently and with respect for the environment, using biocompatible materials and sustainable processes.' },
-          { icon: '😌', title: 'Comfort', text: 'We design every visit to be as comfortable as possible: conscious sedation available, reduced waiting times, unhurried care.' },
-        ].map(v => (
-          <div class="value-card">
-            <div class="value-icon">{v.icon}</div>
-            <div class="value-title">{v.title}</div>
-            <p class="value-text">{v.text}</p>
-          </div>
-        ))}
+
+      <div class="prose-block">
+        <h3 class="sec-h3 prose-section-title">Digital dentistry: precision in service of the patient</h3>
+        <p class="lead">Digital planning is not a luxury. It is what separates predictable dentistry from dentistry that improvises.</p>
+        <p class="lead">At DDX Digital Dental Xperts we have built a 100% digital clinical workflow: from diagnosis with CBCT and intraoral scanner, to guided surgery with a printed surgical guide based on the virtual plan.</p>
+        <p class="lead" style="margin-top:8px;"><strong>The clinical benefits are direct:</strong></p>
+        <ul class="bullet-list">
+          <li><strong>Minimal invasion:</strong> we only intervene on the necessary tissue, planned to the millimetre in advance.</li>
+          <li><strong>Accelerated recovery:</strong> without over-intervention, the post-operative period is drastically reduced.</li>
+          <li><strong>Complete and predictable rehabilitation:</strong> the patient knows from the outset what to expect and when.</li>
+          <li><strong>Compressed timelines:</strong> a case that would take 6–9 months in a conventional clinic is resolved in a fraction of the time with our protocol.</li>
+        </ul>
+
+        <p class="lead">Digital Dental Xperts was created with the aim of becoming a reference centre in implantology, oral surgery, advanced oral rehabilitation and digital dentistry.</p>
+        <p class="lead">Our difference lies not only in the technology we use, but in the combination of clinical experience, continuous training, technological innovation and personalised care centred on the needs of each patient.</p>
+        <p class="lead">The project is led by Dr. Juan Méndez, Dr. Manuel González Poyato and Eduardo Burger — three professionals who share the same vision of clinical excellence and continuous development.</p>
+
+        <h3 class="sec-h3 prose-section-title">Clinical leadership</h3>
+        <p class="lead">Clinical direction is in the hands of Dr. Juan Méndez and Dr. Manuel González Poyato, professionals with an extensive track record in oral implantology, advanced surgery, implant-prosthetic rehabilitation and the resolution of highly complex cases.</p>
+        <p class="lead">Dr. Juan Méndez brings decades of clinical experience in oral implantology, complex oral rehabilitation and the training of national and international professionals. He is a leading reference in the treatment of advanced cases and the application of highly predictable clinical protocols.</p>
+        <p class="lead">Alongside him, Dr. Manuel González Poyato, partner and co-clinical director of Digital Dental Xperts, contributes solid training in oral surgery, implantology and implant-prosthetic rehabilitation. A specialist in bone regeneration and advanced surgical techniques, he also stands out for his expertise in digital dentistry, three-dimensional planning and guided surgery using Exocad® and Exoplan® systems.</p>
+        <p class="lead">His professional activity combines advanced clinical practice with significant teaching and training work. As a Straumann® Speaker, he actively participates in training programmes for dentists, sharing knowledge in digital implantology, surgical planning and advanced oral rehabilitation.</p>
+
+        <h3 class="sec-h3 prose-section-title">Strategic leadership</h3>
+        <p class="lead">Strategic direction is led by Eduardo Burger, whose business vision, organisational capacity and patient-experience focus form a fundamental part of the development of Digital Dental Xperts. His involvement ensures that clinical excellence is accompanied by efficient, caring management oriented towards the highest quality of care.</p>
+
+        <h3 class="sec-h3 prose-section-title">Our key differentiators</h3>
+        <ul class="bullet-list">
+          <li>Clinical leadership by two leading references in implantology, oral surgery and digital dentistry.</li>
+          <li>Extensive experience in complex oral rehabilitation and advanced implantological treatments.</li>
+          <li>Continuous training and active participation in national and international teaching programmes.</li>
+          <li>Specialisation in guided digital implantology and three-dimensional planning.</li>
+          <li>Minimally invasive surgery protocols and immediate loading.</li>
+          <li>Complete integration of the digital workflow using intraoral scanners, CBCT and advanced planning software.</li>
+          <li>Use of world-class implant systems such as Straumann®.</li>
+          <li>Biocompatible alternatives through WhiteSKY® ceramic implants.</li>
+          <li>Close collaboration between clinic, digital planning and laboratory to maximise precision, function and aesthetics.</li>
+        </ul>
+
       </div>
     </div>
   </div>
 
+  <!-- CTA -->
   <div class="cta-banner">
     <div class="cta-banner-inner">
       <span class="eyebrow-dark">Meet us</span>

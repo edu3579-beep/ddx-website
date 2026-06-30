@@ -3,6 +3,22 @@ import Layout from '../layouts/Layout.astro';
 
 const treatments = [
   {
+    id: 'diagnostico',
+    label: 'Diagnóstico Digital',
+    title: 'Diagnóstico Digital 3D',
+    description: 'Disponemos de la tecnología diagnóstica más avanzada para ofrecerle una visión completa y precisa de su situación oral antes de proponer cualquier tratamiento. La planificación digital es el eje central de nuestra práctica clínica.',
+    bullets: [
+      'TAC dental de haz cónico (CBCT)',
+      'Escáner intraoral de alta precisión',
+      'Radiografía digital de baja radiación',
+      'Modelos digitales 3D',
+      'Planificación de implantes guiada por software (Exocad® y Exoplan®)',
+      'Cirugía guiada y protocolo digital completo',
+    ],
+    img: '/images/treatments/diagnostico.jpg',
+    reverse: false,
+  },
+  {
     id: 'implantes',
     label: 'Implantes',
     title: 'Implantes Dentales',
@@ -14,8 +30,8 @@ const treatments = [
       'Planificación quirúrgica guiada por ordenador',
       'Regeneración ósea y elevación de seno',
     ],
-    imgLabel: 'Foto tratamiento implantes',
-    reverse: false,
+    img: '/images/treatments/implantes.jpg',
+    reverse: true,
   },
   {
     id: 'ortodoncia',
@@ -29,8 +45,8 @@ const treatments = [
       'Ortopedia maxilar infantil',
       'Retención y mantenimiento postratamiento',
     ],
-    imgLabel: 'Foto tratamiento ortodoncia',
-    reverse: true,
+    img: '/images/treatments/ortodoncia.jpg',
+    reverse: false,
   },
   {
     id: 'estetica',
@@ -44,8 +60,8 @@ const treatments = [
       'Alargamiento de corona estético',
       'Remodelado gingival con láser',
     ],
-    imgLabel: 'Foto tratamiento estética',
-    reverse: false,
+    img: '/images/treatments/estetica.jpg',
+    reverse: true,
   },
   {
     id: 'periodoncia',
@@ -59,22 +75,7 @@ const treatments = [
       'Tratamiento con láser de diodo',
       'Mantenimiento periodontal preventivo',
     ],
-    imgLabel: 'Foto tratamiento periodoncia',
-    reverse: true,
-  },
-  {
-    id: 'diagnostico',
-    label: 'Diagnóstico Digital',
-    title: 'Diagnóstico Digital 3D',
-    description: 'Disponemos de la tecnología diagnóstica más avanzada para ofrecerle una visión completa y precisa de su situación oral antes de proponer cualquier tratamiento.',
-    bullets: [
-      'TAC dental de haz cónico (CBCT)',
-      'Escáner intraoral de alta precisión',
-      'Radiografía digital de baja radiación',
-      'Modelos digitales 3D',
-      'Planificación de implantes guiada por software',
-    ],
-    imgLabel: 'Foto tecnología diagnóstico',
+    img: '/images/treatments/periodoncia.jpg',
     reverse: false,
   },
   {
@@ -89,7 +90,7 @@ const treatments = [
       'Ortopedia y control del crecimiento maxilar',
       'Tratamientos de urgencia pediátrica',
     ],
-    imgLabel: 'Foto odontología infantil',
+    img: '/images/treatments/infantil.jpg',
     reverse: true,
   },
 ];
@@ -128,9 +129,7 @@ const treatments = [
               <a href="/cita" class="btn btn-dark">Solicitar información</a>
             </div>
             <div style={t.reverse ? 'direction:ltr;' : ''}>
-              <div class="img-frame-placeholder">
-                <span>{t.imgLabel}</span>
-              </div>
+              <img src={t.img} alt={t.label} class="treatment-img" />
             </div>
           </div>
         </div>

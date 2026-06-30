@@ -22,33 +22,10 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
     <div class="hero-img">
-      <div class="hero-placeholder">
-        <span>Foto clínica principal</span>
-      </div>
+      <img src="/images/clinic-hero.jpg" alt="Recepción DDX Digital Dental Xperts" class="hero-clinic-img" />
     </div>
   </div>
 
-  <!-- STATS STRIP -->
-  <div class="stat-strip">
-    <div class="stat-strip-inner">
-      <div>
-        <div class="stat-val">+15</div>
-        <div class="stat-lbl">Años de experiencia</div>
-      </div>
-      <div>
-        <div class="stat-val">+5.000</div>
-        <div class="stat-lbl">Pacientes satisfechos</div>
-      </div>
-      <div>
-        <div class="stat-val">12</div>
-        <div class="stat-lbl">Especialidades</div>
-      </div>
-      <div>
-        <div class="stat-val">★ 4.9</div>
-        <div class="stat-lbl">Valoración media</div>
-      </div>
-    </div>
-  </div>
 
   <!-- ABOUT TEASER -->
   <div class="sec-white">
@@ -66,8 +43,8 @@ import Layout from '../layouts/Layout.astro';
           </p>
           <a href="/quienes-somos" class="btn btn-dark" style="margin-top:28px;">Conózcanos mejor</a>
         </div>
-        <div class="img-frame-placeholder" style="height:420px;">
-          <span>Foto de la clínica / equipo</span>
+        <div>
+          <img src="/images/about-hero.jpg" alt="Equipo DDX Digital Dental Xperts planificando tratamiento digital" class="treatment-img" />
         </div>
       </div>
     </div>
@@ -76,32 +53,22 @@ import Layout from '../layouts/Layout.astro';
   <!-- TREATMENTS PREVIEW -->
   <div class="sec-light">
     <div class="section">
-      <div class="center" style="margin-bottom:44px;">
-        <span class="eyebrow">Nuestros tratamientos</span>
-        <h2 class="sec-h2">Soluciones dentales integrales</h2>
-        <div class="divider-bar"></div>
-        <p class="lead" style="max-width:560px; margin:0 auto;">Ofrecemos una amplia gama de tratamientos para cuidar su salud bucal y transformar su sonrisa.</p>
-      </div>
-      <div class="grid-3">
-        {[
-          { icon: '🦷', title: 'Implantes Dentales', desc: 'Soluciones fijas y permanentes para la sustitución de piezas dentales con tecnología digital.' },
-          { icon: '😁', title: 'Ortodoncia', desc: 'Tratamientos con brackets y alineadores invisibles para una sonrisa perfectamente alineada.' },
-          { icon: '✨', title: 'Estética Dental', desc: 'Blanqueamiento, carillas y diseño de sonrisa para una imagen radiante y natural.' },
-          { icon: '🩺', title: 'Periodoncia', desc: 'Prevención y tratamiento de enfermedades de las encías con tecnología láser.' },
-          { icon: '📡', title: 'Diagnóstico Digital', desc: 'TAC 3D, escáner intraoral y radiografía digital para un diagnóstico preciso.' },
-          { icon: '👶', title: 'Odontología Infantil', desc: 'Atención especializada para los más pequeños con un ambiente amigable y sin miedo.' },
-        ].map(t => (
-          <div class="card">
-            <div class="card-body">
-              <div style="font-size:2rem; margin-bottom:12px;">{t.icon}</div>
-              <h3 class="sec-h3" style="margin-bottom:8px;">{t.title}</h3>
-              <p class="lead">{t.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="text-align:center; margin-top:36px;">
-        <a href="/tratamientos" class="btn btn-outline">Ver todos los tratamientos</a>
+      <div class="grid-2" style="align-items:start; gap:48px;">
+        <div>
+          <span class="eyebrow">Nuestros tratamientos</span>
+          <h2 class="sec-h2">Soluciones dentales integrales</h2>
+          <div class="divider-bar"></div>
+          <p class="lead">Ofrecemos una amplia gama de tratamientos para cuidar su salud bucal y transformar su sonrisa.</p>
+          <a href="/tratamientos" class="btn btn-dark" style="margin-top:24px;">Ver todos los tratamientos</a>
+        </div>
+        <ul class="bullet-list">
+          <li>🦷 Implantes Dentales</li>
+          <li>😁 Ortodoncia e Invisalign</li>
+          <li>✨ Estética Dental y Diseño de Sonrisa</li>
+          <li>🩺 Periodoncia y Salud Gingival</li>
+          <li>📡 Diagnóstico Digital 3D</li>
+          <li>👶 Odontología Infantil y Preventiva</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -133,36 +100,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 
-  <!-- TESTIMONIALS PREVIEW -->
-  <div class="sec-light">
-    <div class="section">
-      <div class="center" style="margin-bottom:44px;">
-        <span class="eyebrow">Testimonios</span>
-        <h2 class="sec-h2">Lo que dicen nuestros pacientes</h2>
-        <div class="divider-bar"></div>
-      </div>
-      <div class="grid-3">
-        {[
-          { quote: 'El tratamiento de implantes fue impecable. El equipo me explicó cada paso con detalle y el resultado superó todas mis expectativas. Me siento como si tuviera dientes naturales.', name: 'María G.', treatment: 'Implantes dentales' },
-          { quote: 'Llevaba años con complejos por mi sonrisa y gracias a la ortodoncia invisible de DDX he recuperado la confianza. El proceso fue cómodo y los resultados visibles desde el primer mes.', name: 'Carlos M.', treatment: 'Ortodoncia Invisalign' },
-          { quote: 'La atención desde el primer momento fue excelente. Clínica muy moderna, profesionales de primer nivel y un trato cercano que hace que vayas sin miedo al dentista.', name: 'Laura P.', treatment: 'Estética dental' },
-        ].map(t => (
-          <div class="testimonial-card">
-            <div class="quote-mark">"</div>
-            <p class="testimonial-text">{t.quote}</p>
-            <div class="testimonial-author">
-              <div class="author-name">{t.name}</div>
-              <div class="author-treatment">{t.treatment}</div>
-              <div class="stars">★★★★★</div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="text-align:center; margin-top:36px;">
-        <a href="/testimonios" class="btn btn-outline">Ver más testimonios</a>
-      </div>
-    </div>
-  </div>
 
   <!-- CTA BANNER -->
   <div class="cta-banner">

@@ -5,18 +5,18 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Quiénes somos – DDX Digital Dental Xperts" lang="es" description="Conozca al equipo y la filosofía de DDX Digital Dental Xperts. Tecnología y humanidad al servicio de su sonrisa.">
 
   <!-- PAGE HERO -->
-  <div class="page-hero">
+  <div class="page-hero" style="padding:32px 32px 24px;">
     <span class="eyebrow">La clínica</span>
-    <h1 class="page-h1">Quiénes somos</h1>
-    <div class="divider-bar" style="margin:16px auto 0;"></div>
+    <h1 class="page-h1" style="font-size:2rem; margin-top:6px;">Quiénes somos</h1>
+    <div class="divider-bar" style="margin:10px auto 0;"></div>
   </div>
 
   <!-- MISSION -->
   <div class="sec-white">
     <div class="section">
       <div class="grid-2">
-        <div class="img-frame-placeholder" style="height:440px; order:-1;">
-          <span>Foto de la clínica / equipo</span>
+        <div style="order:-1;">
+          <img src="/images/about-hero.jpg" alt="Equipo DDX Digital Dental Xperts planificando tratamiento digital" class="treatment-img" />
         </div>
         <div>
           <span class="eyebrow">Nuestra misión</span>
@@ -44,57 +44,51 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="sec-h2">Lo que nos define</h2>
         <div class="divider-bar"></div>
       </div>
-      <div class="grid-3">
-        {[
-          { icon: '🏆', title: 'Excelencia', text: 'Buscamos los mejores resultados en cada tratamiento, utilizando materiales y tecnología de primera calidad sin comprometer la precisión.' },
-          { icon: '💡', title: 'Innovación', text: 'Incorporamos continuamente los avances en odontología digital: TAC 3D, escáneres intraorales, diseño de sonrisa guiado por software.' },
-          { icon: '🤝', title: 'Cercanía', text: 'Cada paciente merece atención personalizada. Escuchamos sus dudas, explicamos cada paso y construimos una relación de confianza duradera.' },
-          { icon: '🔬', title: 'Rigor científico', text: 'Nuestros tratamientos están basados en la evidencia clínica más actualizada y en la formación continua de nuestros especialistas.' },
-          { icon: '♻️', title: 'Responsabilidad', text: 'Trabajamos de forma ética, transparente y con respeto al medioambiente, utilizando materiales biocompatibles y procesos sostenibles.' },
-          { icon: '😌', title: 'Confort', text: 'Diseñamos cada visita para que sea lo más cómoda posible: sedación consciente disponible, tiempos reducidos y atención sin prisas.' },
-        ].map(v => (
-          <div class="value-card">
-            <div class="value-icon">{v.icon}</div>
-            <div class="value-title">{v.title}</div>
-            <p class="value-text">{v.text}</p>
-          </div>
-        ))}
+
+      <div class="prose-block">
+        <h3 class="sec-h3 prose-section-title">Odontología digital: precisión al servicio del paciente</h3>
+        <p class="lead">La planificación digital no es un lujo. Es lo que separa la odontología predecible de la odontología que improvisa.</p>
+        <p class="lead">En DDX Digital Dental Xperts hemos construido un flujo clínico 100% digital: desde el diagnóstico con TAC CBCT y escáner intraoral, hasta la cirugía guiada con férula impresa sobre el plan virtual.</p>
+        <p class="lead" style="margin-top:8px;"><strong>El beneficio clínico es directo:</strong></p>
+        <ul class="bullet-list">
+          <li><strong>Invasión mínima:</strong> intervenimos solo el tejido necesario, planificado previamente al milímetro.</li>
+          <li><strong>Recuperación acelerada:</strong> sin sobreintervención, el postoperatorio se reduce drásticamente.</li>
+          <li><strong>Rehabilitación completa y predecible:</strong> el paciente sabe desde el principio qué esperar y en cuánto tiempo.</li>
+          <li><strong>Plazos comprimidos:</strong> un caso que en clínica convencional tomaría 6-9 meses, con nuestro protocolo se resuelve en una fracción del tiempo.</li>
+        </ul>
+
+        <p class="lead">Digital Dental Xperts nace con el objetivo de convertirse en un centro de referencia en implantología, cirugía oral, rehabilitación oral avanzada y odontología digital.</p>
+        <p class="lead">Nuestra diferencia no reside únicamente en la tecnología que utilizamos, sino en la combinación de experiencia clínica, formación continuada, innovación tecnológica y una atención personalizada centrada en las necesidades de cada paciente.</p>
+        <p class="lead">El proyecto está liderado por el Dr. Juan Méndez, el Dr. Manuel González Poyato y Eduardo Burger, tres profesionales que comparten una misma visión de excelencia asistencial y desarrollo continuo.</p>
+
+        <h3 class="sec-h3 prose-section-title">Dirección clínica</h3>
+        <p class="lead">La dirección clínica está formada por el Dr. Juan Méndez y el Dr. Manuel González Poyato, profesionales con una amplia trayectoria en implantología oral, cirugía avanzada, rehabilitación implantoprotésica y resolución de casos de elevada complejidad.</p>
+        <p class="lead">El Dr. Juan Méndez aporta décadas de experiencia clínica en implantología oral, rehabilitación oral compleja y formación de profesionales nacionales e internacionales, siendo un referente en el tratamiento de casos avanzados y en la aplicación de protocolos clínicos altamente predecibles.</p>
+        <p class="lead">Junto a él, el Dr. Manuel González Poyato, socio y codirector clínico de Digital Dental Xperts, aporta una sólida formación en cirugía oral, implantología y rehabilitación implantoprotésica. Especialista en regeneración ósea y técnicas quirúrgicas avanzadas, destaca además por su experiencia en odontología digital, planificación tridimensional y cirugía guiada mediante los sistemas Exocad® y Exoplan®.</p>
+        <p class="lead">Su actividad profesional combina la práctica clínica avanzada con una importante labor docente y formativa. Como Speaker de Straumann®, participa activamente en programas de formación para odontólogos, compartiendo conocimientos en implantología digital, planificación quirúrgica y rehabilitación oral avanzada.</p>
+
+        <h3 class="sec-h3 prose-section-title">Dirección estratégica</h3>
+        <p class="lead">La dirección estratégica del proyecto está liderada por Eduardo Burger, cuya visión empresarial, capacidad organizativa y orientación a la experiencia del paciente constituyen una parte fundamental del desarrollo de Digital Dental Xperts. Su participación garantiza que la excelencia clínica vaya acompañada de una gestión eficiente, cercana y orientada a ofrecer la máxima calidad asistencial.</p>
+
+        <h3 class="sec-h3 prose-section-title">Nuestros pilares diferenciales</h3>
+        <ul class="bullet-list">
+          <li>Dirección clínica liderada por dos referentes en implantología, cirugía oral y odontología digital.</li>
+          <li>Amplia experiencia en rehabilitación oral compleja y tratamientos implantológicos avanzados.</li>
+          <li>Formación continua y participación activa en programas docentes nacionales e internacionales.</li>
+          <li>Especialización en implantología digital guiada y planificación tridimensional.</li>
+          <li>Protocolos de cirugía mínimamente invasiva y carga inmediata.</li>
+          <li>Integración completa del flujo digital mediante escáner intraoral, CBCT y software de planificación avanzada.</li>
+          <li>Utilización de sistemas implantológicos de referencia mundial como Straumann®.</li>
+          <li>Alternativas biocompatibles mediante implantes cerámicos WhiteSKY®.</li>
+          <li>Colaboración estrecha entre clínica, planificación digital y laboratorio para maximizar precisión, funcionalidad y estética.</li>
+        </ul>
+
       </div>
     </div>
   </div>
 
-  <!-- TIMELINE -->
-  <div class="sec-white">
-    <div class="section">
-      <div class="grid-2" style="align-items:start;">
-        <div>
-          <span class="eyebrow">Nuestra historia</span>
-          <h2 class="sec-h2">Un camino de crecimiento y excelencia</h2>
-          <div class="divider-bar"></div>
-          <p class="lead">Desde nuestros inicios hemos crecido con el objetivo de convertirnos en referente de la odontología digital.</p>
-        </div>
-        <div>
-          {[
-            { year: '20XX', title: 'Fundación de DDX', text: 'Apertura de la clínica con el compromiso de integrar tecnología digital en cada tratamiento.' },
-            { year: '20XX', title: 'Primer escáner 3D', text: 'Incorporación del primer TAC de haz cónico (CBCT) para diagnóstico tridimensional de máxima precisión.' },
-            { year: '20XX', title: 'Expansión del equipo', text: 'Incorporación de nuevos especialistas en implantología, ortodoncia y periodoncia.' },
-            { year: '20XX', title: 'Certificación de calidad', text: 'Obtención de certificación internacional de calidad en procesos clínicos y gestión de pacientes.' },
-            { year: 'Hoy', title: '+5.000 pacientes', text: 'Más de cinco mil pacientes satisfechos avalan nuestro trabajo y nuestra filosofía de excelencia.' },
-          ].map(item => (
-            <div class="tl-item">
-              <div class="tl-year">{item.year}</div>
-              <div>
-                <div class="tl-content-title">{item.title}</div>
-                <p class="tl-content-text">{item.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- CTA -->
+<!-- CTA -->
   <div class="cta-banner">
     <div class="cta-banner-inner">
       <span class="eyebrow-dark">Conózcanos</span>

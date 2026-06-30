@@ -22,33 +22,10 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </div>
     <div class="hero-img">
-      <div class="hero-placeholder">
-        <span>Main clinic photo</span>
-      </div>
+      <img src="/images/clinic-hero.jpg" alt="DDX Digital Dental Xperts reception" class="hero-clinic-img" />
     </div>
   </div>
 
-  <!-- STATS STRIP -->
-  <div class="stat-strip">
-    <div class="stat-strip-inner">
-      <div>
-        <div class="stat-val">+15</div>
-        <div class="stat-lbl">Years of experience</div>
-      </div>
-      <div>
-        <div class="stat-val">+5,000</div>
-        <div class="stat-lbl">Happy patients</div>
-      </div>
-      <div>
-        <div class="stat-val">12</div>
-        <div class="stat-lbl">Specialties</div>
-      </div>
-      <div>
-        <div class="stat-val">★ 4.9</div>
-        <div class="stat-lbl">Average rating</div>
-      </div>
-    </div>
-  </div>
 
   <!-- ABOUT TEASER -->
   <div class="sec-white">
@@ -62,8 +39,8 @@ import Layout from '../../layouts/Layout.astro';
           <p class="lead" style="margin-top:14px;">From the first consultation to post-treatment follow-up, we accompany you every step of the way with transparency and professionalism.</p>
           <a href="/en/about" class="btn btn-dark" style="margin-top:28px;">Learn more about us</a>
         </div>
-        <div class="img-frame-placeholder" style="height:420px;">
-          <span>Clinic / team photo</span>
+        <div>
+          <img src="/images/about-hero.jpg" alt="DDX Digital Dental Xperts team planning digital treatment" class="treatment-img" />
         </div>
       </div>
     </div>
@@ -72,66 +49,26 @@ import Layout from '../../layouts/Layout.astro';
   <!-- TREATMENTS PREVIEW -->
   <div class="sec-light">
     <div class="section">
-      <div class="center" style="margin-bottom:44px;">
-        <span class="eyebrow">Our treatments</span>
-        <h2 class="sec-h2">Comprehensive dental solutions</h2>
-        <div class="divider-bar"></div>
-        <p class="lead" style="max-width:560px; margin:0 auto;">We offer a wide range of treatments to care for your oral health and transform your smile.</p>
-      </div>
-      <div class="grid-3">
-        {[
-          { icon: '🦷', title: 'Dental Implants', desc: 'Fixed, permanent solutions for missing teeth using state-of-the-art digital planning technology.' },
-          { icon: '😁', title: 'Orthodontics', desc: 'Braces and invisible aligners for a perfectly aligned smile tailored to your lifestyle.' },
-          { icon: '✨', title: 'Cosmetic Dentistry', desc: 'Whitening, veneers, and smile design for a radiant and naturally beautiful result.' },
-          { icon: '🩺', title: 'Periodontics', desc: 'Prevention and treatment of gum disease using laser technology and evidence-based protocols.' },
-          { icon: '📡', title: 'Digital Diagnostics', desc: '3D CT scans, intraoral scanners and digital X-rays for precise, complete diagnoses.' },
-          { icon: '👶', title: 'Paediatric Dentistry', desc: 'Specialist care for children in a friendly, fear-free environment focused on prevention.' },
-        ].map(t => (
-          <div class="card">
-            <div class="card-body">
-              <div style="font-size:2rem; margin-bottom:12px;">{t.icon}</div>
-              <h3 class="sec-h3" style="margin-bottom:8px;">{t.title}</h3>
-              <p class="lead">{t.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="text-align:center; margin-top:36px;">
-        <a href="/en/treatments" class="btn btn-outline">View all treatments</a>
+      <div class="grid-2" style="align-items:start; gap:48px;">
+        <div>
+          <span class="eyebrow">Our treatments</span>
+          <h2 class="sec-h2">Comprehensive dental solutions</h2>
+          <div class="divider-bar"></div>
+          <p class="lead">We offer a wide range of treatments to care for your oral health and transform your smile.</p>
+          <a href="/en/treatments" class="btn btn-dark" style="margin-top:24px;">View all treatments</a>
+        </div>
+        <ul class="bullet-list">
+          <li>🦷 Dental Implants</li>
+          <li>😁 Orthodontics & Invisalign</li>
+          <li>✨ Cosmetic Dentistry & Smile Design</li>
+          <li>🩺 Periodontics & Gum Health</li>
+          <li>📡 3D Digital Diagnostics</li>
+          <li>👶 Paediatric & Preventive Dentistry</li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <!-- TESTIMONIALS PREVIEW -->
-  <div class="sec-white">
-    <div class="section">
-      <div class="center" style="margin-bottom:44px;">
-        <span class="eyebrow">Testimonials</span>
-        <h2 class="sec-h2">What our patients say</h2>
-        <div class="divider-bar"></div>
-      </div>
-      <div class="grid-3">
-        {[
-          { quote: 'The implant treatment was flawless. The team explained every step in detail and the result exceeded all my expectations. I feel like I have natural teeth.', name: 'María G.', treatment: 'Dental implants' },
-          { quote: 'I had been self-conscious about my smile for years and thanks to DDX invisible orthodontics I have regained my confidence. The process was comfortable and results were visible from the first month.', name: 'Carlos M.', treatment: 'Invisalign orthodontics' },
-          { quote: 'The care from the very first moment was excellent. Very modern clinic, top-level professionals and a warm approach that makes you go to the dentist without fear.', name: 'Laura P.', treatment: 'Cosmetic dentistry' },
-        ].map(t => (
-          <div class="testimonial-card">
-            <div class="quote-mark">"</div>
-            <p class="testimonial-text">{t.quote}</p>
-            <div class="testimonial-author">
-              <div class="author-name">{t.name}</div>
-              <div class="author-treatment">{t.treatment}</div>
-              <div class="stars">★★★★★</div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="text-align:center; margin-top:36px;">
-        <a href="/en/testimonials" class="btn btn-outline">Read more testimonials</a>
-      </div>
-    </div>
-  </div>
 
   <!-- CTA BANNER -->
   <div class="cta-banner">

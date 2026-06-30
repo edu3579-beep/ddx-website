@@ -18,7 +18,9 @@ const isActive = (href: string) => {
 };
 
 const navES = [
-  { href: '/quienes-somos', label: 'Quiénes somos', cta: false },
+  { href: '/quienes-somos', label: 'Quiénes somos', cta: false, children: [
+    { href: '/cirugia-digital', label: 'Cirugía Digital Dental | Tecnología y Precisión' },
+  ]},
   { href: '/equipo', label: 'Equipo', cta: false },
   { href: '/tratamientos', label: 'Tratamientos', cta: false },
   { href: '/promociones', label: 'Promociones', cta: false },
@@ -26,7 +28,9 @@ const navES = [
   { href: '/cita', label: 'Pida su cita', cta: true },
 ];
 const navEN = [
-  { href: '/en/about', label: 'About Us', cta: false },
+  { href: '/en/about', label: 'About Us', cta: false, children: [
+    { href: '/en/digital-surgery', label: 'Digital Dental Surgery | Technology & Precision' },
+  ]},
   { href: '/en/team', label: 'Team', cta: false },
   { href: '/en/treatments', label: 'Treatments', cta: false },
   { href: '/en/promotions', label: 'Promotions', cta: false },
@@ -95,7 +99,18 @@ const homeHref = lang === 'en' ? '/en/' : '/';
           {nav.map(n => (
             n.cta
               ? <a href={n.href} class:list={['nav-link-cta', { active: isActive(n.href) }]}>{n.label}</a>
-              : <a href={n.href} class:list={['nav-link', { active: isActive(n.href) }]}>{n.label}</a>
+              : n.children
+                ? <div class="nav-dropdown">
+                    <a href={n.href} class:list={['nav-link nav-dropdown-toggle', { active: isActive(n.href) }]}>
+                      {n.label} <span class="nav-chevron">▾</span>
+                    </a>
+                    <div class="nav-dropdown-menu">
+                      {n.children.map((c: {href: string, label: string}) => (
+                        <a href={c.href} class:list={['nav-dropdown-item', { active: isActive(c.href) }]}>{c.label}</a>
+                      ))}
+                    </div>
+                  </div>
+                : <a href={n.href} class:list={['nav-link', { active: isActive(n.href) }]}>{n.label}</a>
           ))}
         </nav>
 
@@ -120,7 +135,12 @@ const homeHref = lang === 'en' ? '/en/' : '/';
         {nav.map(n => (
           n.cta
             ? <a href={n.href} class:list={['mob-nav-cta', { active: isActive(n.href) }]}>{n.label}</a>
-            : <a href={n.href} class:list={['mob-nav-link', { active: isActive(n.href) }]}>{n.label}</a>
+            : <>
+                <a href={n.href} class:list={['mob-nav-link', { active: isActive(n.href) }]}>{n.label}</a>
+                {n.children && n.children.map((c: {href: string, label: string}) => (
+                  <a href={c.href} class:list={['mob-nav-link mob-nav-child', { active: isActive(c.href) }]}>{c.label}</a>
+                ))}
+              </>
         ))}
       </div>
     </div>
